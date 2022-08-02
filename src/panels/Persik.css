@@ -4,3 +4,19 @@
   max-width: 240px;
   margin: 20px auto;
 }
+.visiable{
+  background-color: green;
+}
+.disvisiable{
+  background-color: red;
+}
+.friends{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.correct{
+  background-color: green;
+}
+.incorrect{
+  background-color: red;
+}
