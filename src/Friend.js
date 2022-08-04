@@ -1,30 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import bridge from '@vkontakte/vk-bridge';
-import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
+import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol, Button } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 
 const Friend = (props) => {
 	const [result, setResult] = useState('neutral');
-	const selectedFriend = (id) => {
+	const selectedFriend = () => {
 		
-		if (id ==props.random) {
+		if (props.right){
 			setResult('correct')
-			console.log(result)
 		}
-
-		else {
-			console.log(result)
-		setResult('incorrect')}
-	
+		else(setResult('incorrect'))
+		props.setPressed(true)
+		console.log(result)
 	}
 	
 
 	return(
-		<div onClick={()=>selectedFriend(props.id)} className={result} >
-			<img src={props.imageSrc}></img>
+		<Button stretched size="l" mode="secondary" onClick={()=>selectedFriend()} className={result} disabled={props.pressed}>
+					<img src={props.imageSrc}></img>
 			<p>{props.name}</p>
-			{/* <p>{props.status}</p> */}
-		</div>
+		</Button>
+		
 	)
 }
 
