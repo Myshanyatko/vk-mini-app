@@ -11,12 +11,38 @@
   background-color: red;
 }
 .friends{
+  margin: 20px 0;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 3fr));
+  grid-gap: 1rem;
+}
+.friend img{
+  margin-top: 20px;
+  border-radius: 50%;
+}
+.friend p {
+font-size: 14px;
 }
 .correct{
   background-color: green;
 }
 .incorrect{
   background-color: red;
+}
+.home img{
+  display: block;
+  margin: 0 auto  5px auto;
+}
+.homeDescription{
+  margin: 10px 20px 0 20px;
+}
+.status{
+  text-align: center;
+  font-size: 24px;
+  padding: 0 10px;
+}
+.listFriends{
+  padding: 0 20px;
+
 }
